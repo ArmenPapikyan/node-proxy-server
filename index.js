@@ -38,6 +38,9 @@ app.use('/', createProxyMiddleware({
   changeOrigin: true,
   onProxyReq: function (proxyReq, req, res) {
     proxyReq.setHeader('x-api-key', API_KEY);
+  },
+  onProxyRes: function (proxyRes, req, res) {
+    proxyRes.setHeader('x-api-key', API_KEY);
   }
 }));
 
