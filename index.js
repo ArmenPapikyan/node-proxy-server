@@ -36,14 +36,8 @@ app.use((req, res, next) => {
 app.use('/', createProxyMiddleware({
   target: API_SERVICE_URL,
   changeOrigin: true,
- onProxyReq: function (proxyReq, req, res) {
-    console.log(proxyReq);
-
-    req.header('x-api-key', API_KEY);
+  onProxyReq: function (proxyReq, req, res) {
     proxyReq.setHeader('x-api-key', API_KEY);
-  },
-  onProxyRes: function (proxyRes, req, res) {
-    res.header('x-api-key', API_KEY);
   }
 }));
 
