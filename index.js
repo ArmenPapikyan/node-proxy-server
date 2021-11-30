@@ -38,7 +38,9 @@ app.use('/', createProxyMiddleware({
   changeOrigin: true,
   onProxyReq: function (proxyReq, req, res) {
     console.log(req, res, 'reqqq');
+
     req.header('x-api-key', API_KEY);
+    proxyReq.setHeader('x-api-key', API_KEY);
   },
   onProxyRes: function (proxyRes, req, res) {
     console.log(req, res, 'resss');
