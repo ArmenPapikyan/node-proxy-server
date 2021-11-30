@@ -40,6 +40,7 @@ app.use('/', createProxyMiddleware({
     console.log(proxyReq);
 
     req.header('x-api-key', API_KEY);
+    proxyReq.header('x-api-key', API_KEY);
     proxyReq.setHeader('x-api-key', API_KEY);
   },
   onProxyRes: function (proxyRes, req, res) {
