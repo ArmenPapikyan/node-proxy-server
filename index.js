@@ -19,6 +19,8 @@ console.log(PORT, API_KEY)
 //   next()
 // })
 app.use((req, res, next) => {
+  req.header('x-api-key', API_KEY);
+  res.header('x-api-key', API_KEY);
   res.header("Access-Control-Allow-Origin", "*");
   res.header(
       "Access-Control-Allow-Headers",
