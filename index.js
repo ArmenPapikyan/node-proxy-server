@@ -12,7 +12,7 @@ const HOST = process.env.HOST;
 const API_SERVICE_URL = process.env.API_SERVICE_URL;
 const API_KEY = process.env.API_KEY;
 app.use(morgan('dev'));
-
+console.log(PORT, API_KEY)
 // app.use(function (req, res, next) {
 //   res.header('Access-Control-Allow-Origin', '*')
 //   res.header('Access-Control-Allow-Headers', 'Origin, X-Requested-With, Content-Type, Accept')
