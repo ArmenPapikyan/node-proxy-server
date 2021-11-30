@@ -7,8 +7,8 @@ const { createProxyMiddleware } = require('http-proxy-middleware');
 const app = express();
 
 // Configuration
-const PORT = process.env.APP_PORT;
-const HOST = process.env.APP_HOST;
+const PORT = process.env.PORT;
+const HOST = process.env.HOST;
 const API_SERVICE_URL = process.env.API_SERVICE_URL;
 const API_KEY = process.env.API_KEY;
 app.use(morgan('dev'));
