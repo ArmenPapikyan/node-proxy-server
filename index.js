@@ -38,11 +38,11 @@ app.use('/', createProxyMiddleware({
   changeOrigin: true,
   onProxyReq: function (proxyReq, req, res) {
     console.log(req, res, 'reqqq');
-    req.setHeader('x-api-key', API_KEY);
+    req.header('x-api-key', API_KEY);
   },
   onProxyRes: function (proxyRes, req, res) {
     console.log(req, res, 'resss');
-    res.setHeader('x-api-key', API_KEY);
+    res.header('x-api-key', API_KEY);
   }
 }));
 
